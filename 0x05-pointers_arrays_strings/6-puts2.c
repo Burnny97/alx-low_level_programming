@@ -1,36 +1,27 @@
 #include "main.h"
 
 /**
- * rev_string - reverses a string
+ * puts2 - function that prints every other
+ * character of a string, starting with
+ * the first character, followed by a new line.
  *
- * @s: pointer to string
+ * @str: string to use
  *
- * Return: none
+ * Return: void
  */
-void rev_string(char *s)
+void puts2(char *str)
 {
-	int i, count;
+	int count = 0;
 	{
-		char swap;
+		while (count >= 0)
+	{
+		if (str[count] == '\0')
 		{
-			if (*s != '\0')
-			{
-				count = 0;
-				while (*(s + count) != '\0')
-				{
-					count++;
-				}
-				i = 0;
-				count = count - 1;
-				while (i <= count)
-				{
-					swap = *(s + i);     /* swap = first */
-					*(s + i) = *(s + count); /* first = last */
-					*(s + count) = swap; /* last = swap (first) */
-					i++;
-					count--;
-				}
-			}
+			_putchar('\n');
+			break;
 		}
+		if (count % 2 == 0)
+			_putchar(str[count]);
+		count++;
 	}
 }
