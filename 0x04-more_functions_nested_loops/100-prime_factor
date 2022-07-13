@@ -5,7 +5,6 @@
  *
  * Return: 0
  */
-
 int main(void)
 {
 	long num = 612852475143;
@@ -19,9 +18,9 @@ int main(void)
 				num = num / divisor;
 				largest = divisor;
 			}
-			divisor = divisor + 1;
+		divisor = divisor + 1;
 		}
-		printf("%ld\n", largest);
-		return (0);
 	}
+	printf("%ld\n", largest);
+	return (0);
 }
