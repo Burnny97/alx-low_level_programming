@@ -21,7 +21,7 @@ int main(void)
 			}
 			divisor = divisor + 1;
 		}
+		printf("%ld\n", largest);
+		return (0);
 	}
-	printf("%ld\n", largest);
-	return (0);
 }
