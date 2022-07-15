@@ -1,32 +1,23 @@
-#include "main.h"
+`#include "main.h"
 
 /**
- * leet - function that encodes a string into 1337
- * @str: string to encode
+ * string_toupper - Function that changes all
+ * lowercase letter of a string to uppercase
+ * @str: string to convert
  *
- * Return: pointer to string
+ * Return: char
  */
 
-char *leet(char *str)
+char *string_toupper(char *str)
 {
-	int count1, count2;
-	char c[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
-	int code[] = {52, 52, 51, 51, 48, 48, 55, 55, 49, 49};
+	int count;
 	{
-		count1 = 0;
-		while (str[count1] != '\0')
+		count = 0;
+		while (str[count] != '\0')
 		{
-			count2 = 0;
-			while (count2 < 10)
-			{
-				if (str[count1] == c[count2])
-				{
-					*(str + count1) = code[count2];
-					break;
-				}
-				count2++;
-			}
-			count1++;
+			if ((str[count] >= 97) && (str[count] <= 122))
+				*(str + count) -= 32;
+			count++;
 		}
 		return (str);
 	}
