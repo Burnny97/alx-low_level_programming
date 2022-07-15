@@ -1,24 +1,41 @@
-`#include "main.h"
+#include "main.h"
 
 /**
- * string_toupper - Function that changes all
- * lowercase letter of a string to uppercase
- * @str: string to convert
+ * cap_string - function that capitalizes all words of a string
+ * @str: String to capitalize
  *
- * Return: char
+ * Return: pointer to str
  */
 
-char *string_toupper(char *str)
+char *cap_string(char *str)
 {
-	int count;
+	int i, j, found;
+	int sep[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 	{
-		count = 0;
-		while (str[count] != '\0')
+		i = 0;
+		found = 0;
+		if ((str[i] >= 97) && (str[i] <= 122))
+			*(str + i) -= 32;
+		i++;
 		{
-			if ((str[count] >= 97) && (str[count] <= 122))
-				*(str + count) -= 32;
-			count++;
+			while (str[i] != '\0')
+			{
+				j = 0;
+				while (j < 13)
+				{
+					if (sep[j] == str[i])
+					{
+						found = 1;
+						break;
+					}
+					j++;
+				}
+				if ((found == 1) && ((str[i + 1] >= 97) && (str[i + 1] <= 122)))
+					*(str + (i + 1)) -= 32;
+				i++;
+				found = 0;
+			}
+			return (str);
 		}
-		return (str);
 	}
 }
